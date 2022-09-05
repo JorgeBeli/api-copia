@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="./icons8-morty-smith-color-hand-drawn-120.png">
+</head>
+<body>
+    <main>
+        <nav>
+            <h1>Home</h1>
+            <p id="default">Reload</p>
+            <div class="dropdown__wraper">
+                <button class="dropdown__button" type="button">Status</button>
+                <div class="dropdown">
+                    <ul>
+                        <li class="options__wraper">
+                            <p class="option" id="aliveOption">Alive</p>
+                            <p class="option" id="deadOption">Dead</p>
+                            <p class="option" id="unknownOption">Unkown</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="theme__wraper">
+                <input type="checkbox" id="lightThemeCheckbox">
+            </div>
+        </nav>
+        <div class="characters__page">
+
+        </div>
+        <section class="character__wraper">
+
+        </section>
+        <section class="character__info">
+            
+        </section>
+        <div class="buttons">
+            <input class="nav__buttons" id="previous__page__status" type="button" value="<">
+            <input class="nav__buttons" id='previous__page' type="button" value="<">
+            <div class="nav__buttons" id="current__page"></div>
+            <input class="nav__buttons" id="next__page" type="button" value=">">
+            <input class="nav__buttons" id="next__page__status" type="button" value=">">
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

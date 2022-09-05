@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Schoolbell&display=swap');
+
+body {
+    background-color: #202020;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p,input{
+    color: #fff;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15vh;
+    background-color: #424642;
+    h1{
+        width: fit-content;
+        cursor: pointer;
+        margin-left: 2rem;
+        transition: all .25s;
+        &:hover{
+            color: #f00;
+        }
+    }
+    p {
+        cursor: pointer;
+        transition: all .25s;
+        &:hover{
+            color: #f00;
+        }
+    }
+    .dropdown__wraper{
+        display: flex;
+        height: 15vh;
+        flex-direction: column;
+        position: relative;
+        top: 2.5rem;
+        margin-right: 2rem;
+        .dropdown__button{
+            border: none;
+            background: #656565;
+            width: 7.35vw;
+            color: $blanco;
+            cursor: pointer;
+            padding: .5rem;
+            transition: all .25s;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            &:hover{
+                color: #f00;
+            }
+        }
+        .dropdown{
+            background-color: #505050;
+            display: none;
+            position: relative;
+            padding: 1rem;
+            width: 5vw;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            ul{
+                li{
+                    list-style: none;
+                    p{
+                        margin-bottom: .5rem;
+                        cursor: pointer;
+                        width: 100%;
+                        transition: all 0.25s;
+                        font-size: .9rem;
+                        text-align: center;
+                        &:hover{
+                            color: #f00;
+                        }
+                    }
+                }
+            }
+        }
+        .visible{
+            display: flex;
+        }
+        .invisible{
+            display: none;
+        }
+    }
+    .theme__wraper{
+        margin-right: 1rem;
+        .theme__changer{
+            width: 1.5rem;
+            height: 1.5rem;
+            content: '';
+            background-color: #6d6d6d;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+}
+.characters__page{
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    color: #ece8e7;
+    &::before, &::after{
+        display: block;
+        content: "";
+        height: 1px;
+        width: 35vw;
+        background: linear-gradient(to left, rgb(90, 90, 90), transparent);
+    }
+    &::after{
+        background: linear-gradient(to right, rgb(90, 90, 90), transparent);
+    }
+}
+.character__wraper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2.5vh;
+    .personaje{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin: .5rem auto;
+        height: 40vh;
+        width: 40vw;
+        text-align: left;
+        user-select: none;
+        :hover{
+            cursor: pointer;
+        }
+        .personaje__img{
+            grid-area:1/1/3/1;
+            background-color: #424642;
+            border-bottom-left-radius: 25px;
+            border-top-left-radius: 25px;
+            padding: .5rem;
+            img{
+                object-fit: cover;
+                width: 15vw;
+                height: 100%;
+                border-radius: 25px;
+            }
+        }
+        .personaje__info{
+            grid-area: 1/2/1/4;
+            width: 100%;
+            height: 100%;
+            border-top-right-radius: 25px;
+            background-color: #424642;
+            font-size: 1.5;
+            > * {
+                margin-left: 1rem;
+            }
+            :nth-child(1){
+                margin-top: 1rem;
+            }
+            :nth-child(2){
+                margin-top: .25rem;
+            }
+        }
+        .personaje__info--abajo{
+            grid-area: 2/2/2/4;
+            border-bottom-right-radius: 25px;
+            background-color: #424642;
+            display: flex;
+            flex-direction: column;
+            font-size: 1.25rem;
+            padding: 1rem 0;
+            > * {
+                margin-left: 1rem;
+            }
+            :nth-child(odd){
+                color: #6d6d6d;
+                margin-top: .35rem;
+            }
+        }
+    }
+    .lightThemePersonaje{
+        :nth-child(1), :nth-child(2), :nth-child(3){
+            background-color: #9ED2C6;
+        }
+    }
+}
+
+.character__info {
+    display: none;
+    margin: 1rem auto;
+    .card__wraper{
+        margin: auto;
+        display: grid;
+        place-content: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        background-color: $rojo;
+        height: 80vh;
+        padding: 2rem; 
+        position: relative;
+        clip-path: polygon(0 80.00px,80.00px 0,calc(100% - 80.00px) 0,100% 80.00px,100% calc(100% - 80.00px),calc(100% - 80.00px) 100%,80.00px 100%,0 calc(100% - 80.00px));
+        > * {
+            text-align: center;
+        }
+        &::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background: $naranja;
+            clip-path: polygon(0 80.00px,80.00px 0,calc(100% - 80.00px) 0,100% 80.00px,100% calc(100% - 80.00px),calc(100% - 80.00px) 100%,80.00px 100%,0 calc(100% - 80.00px),0 80.00px,10px  calc(80.00px + 4.14px),10px calc(100% - 80.00px - 4.14px),calc(80.00px + 4.14px) calc(100% - 10px),calc(100% - 80.00px - 4.14px) calc(100% - 10px),calc(100% - 10px) calc(100% - 80.00px - 4.14px),calc(100% - 10px) calc(80.00px + 4.14px),calc(100% - 80.00px - 4.14px) 10px,calc(80.00px + 4.14px) 10px,10px calc(80.00px + 4.14px));
+        }
+        .card__info--left__last__location{
+            grid-area: 1/1/1/1;
+            margin: .5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: $fondo;
+            align-items: center;  
+            position: relative;
+            clip-path: polygon(0 80.00px,80.00px 0,100% 0,100% calc(100% - 80.00px),calc(100% - 80.00px) 100%,0 100%);
+            &::before{
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: $naranja;
+                clip-path: polygon(0 80.00px,80.00px 0,100% 0,100% calc(100% - 80.00px),calc(100% - 80.00px) 100%,0 100%,0 80.00px,10px  calc(80.00px + 4.14px),10px calc(100% - 10px),calc(100% - 80.00px - 4.14px) calc(100% - 10px),calc(100% - 10px) calc(100% - 80.00px - 4.14px),calc(100% - 10px) 10px,calc(80.00px + 4.14px) 10px,10px calc(80.00px + 4.14px));
+            }
+        }
+        .card__info--left__created{
+            grid-area: 2/1/2/1;
+            margin: .5rem;
+            padding: 1.5rem;
+            height: 25vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: $fondo;
+            align-items: center;
+            position: relative;
+            clip-path: polygon(0 0,calc(100% - 80.00px) 0,100% 80.00px,100% 100%,80.00px 100%,0 calc(100% - 80.00px));
+            &::before{
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                background: $naranja;
+                clip-path: polygon(0 0,calc(100% - 80.00px) 0,100% 80.00px,100% 100%,80.00px 100%,0 calc(100% - 80.00px),0 0,10px  10px ,10px calc(100% - 80.00px - 4.14px),calc(80.00px + 4.14px) calc(100% - 10px),calc(100% - 10px) calc(100% - 10px),calc(100% - 10px) calc(80.00px + 4.14px),calc(100% - 80.00px - 4.14px) 10px,10px 10px);
+            }
+        }
+        .card__info--left__status{
+            background-color: $fondo;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 25vh;
+            clip-path: polygon(0 80.00px,80.00px 0,calc(100% - 80.00px) 0,100% 80.00px,100% calc(100% - 80.00px),calc(100% - 80.00px) 100%,80.00px 100%,0 calc(100% - 80.00px));
+            position: relative;
+            p {
+                font-size: 3rem;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                background: $naranja;
+                clip-path: polygon(0 80.00px,80.00px 0,calc(100% - 80.00px) 0,100% 80.00px,100% calc(100% - 80.00px),calc(100% - 80.00px) 100%,80.00px 100%,0 calc(100% - 80.00px),0 80.00px,10px  calc(80.00px + 4.14px),10px calc(100% - 80.00px - 4.14px),calc(80.00px + 4.14px) calc(100% - 10px),calc(100% - 80.00px - 4.14px) calc(100% - 10px),calc(100% - 10px) calc(100% - 80.00px - 4.14px),calc(100% - 10px) calc(80.00px + 4.14px),calc(100% - 80.00px - 4.14px) 10px,calc(80.00px + 4.14px) 10px,10px calc(80.00px + 4.14px));
+            }
+        }
+        .card__info--img{
+            grid-area: 1/2/4/2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            img {
+                border: 10px solid $naranja;
+                object-fit: cover;
+                border-radius: 15px;
+            }
+        }
+        .card__info--right__name{
+            grid-area: 1/3/1/3;
+            margin: 1rem;
+            height: fit-content;
+            padding: 3rem;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: $fondo;
+            align-items: center;  
+            position: relative;
+            clip-path: polygon(0 0,calc(100% - 80.00px) 0,100% 80.00px,100% 100%,80.00px 100%,0 calc(100% - 80.00px));
+            z-index: 0;
+            &::before{
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                background: $naranja;
+                clip-path: polygon(0 0,calc(100% - 80.00px) 0,100% 80.00px,100% 100%,80.00px 100%,0 calc(100% - 80.00px),0 0,10px  10px ,10px calc(100% - 80.00px - 4.14px),calc(80.00px + 4.14px) calc(100% - 10px),calc(100% - 10px) calc(100% - 10px),calc(100% - 10px) calc(80.00px + 4.14px),calc(100% - 80.00px - 4.14px) 10px,10px 10px);
+            }
+        }
+        .card__info--right__vitals{
+            grid-area: 2/3/2/3;
+            margin: 1rem;
+            padding: 1rem;
+            height: 25vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: $fondo;
+            align-items: center;
+            position: relative;
+            clip-path: polygon(0 80px, 80px 0, 100% 0, 100% calc(100% - 80px), calc(100% - 80px) 100%, 0 100%);
+            &::before{
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                background: $naranja;
+                clip-path: polygon(0 80.00px,80.00px 0,100% 0,100% calc(100% - 80.00px),calc(100% - 80.00px) 100%,0 100%,0 80.00px,10px  calc(80.00px + 4.14px),10px calc(100% - 10px),calc(100% - 80.00px - 4.14px) calc(100% - 10px),calc(100% - 10px) calc(100% - 80.00px - 4.14px),calc(100% - 10px) 10px,calc(80.00px + 4.14px) 10px,10px calc(80.00px + 4.14px));
+            }
+        }
+        .card__info--right__location{
+            grid-area: 3/3/4/3;
+            margin: .5rem;
+            height: fit-content;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: $fondo;
+            align-items: center;  
+            position: relative;
+            clip-path: polygon(0 80.00px,80.00px 0,100% 0,100% calc(100% - 80.00px),calc(100% - 80.00px) 100%,0 100%);
+            &::before{
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                background: $naranja;
+                clip-path: polygon(0 80.00px,80.00px 0,100% 0,100% calc(100% - 80.00px),calc(100% - 80.00px) 100%,0 100%,0 80.00px,10px  calc(80.00px + 4.14px),10px calc(100% - 10px),calc(100% - 80.00px - 4.14px) calc(100% - 10px),calc(100% - 10px) calc(100% - 80.00px - 4.14px),calc(100% - 10px) 10px,calc(80.00px + 4.14px) 10px,10px calc(80.00px + 4.14px));
+            }
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin: 1rem auto;
+    margin-top: 3rem;
+    .nav__buttons{
+        user-select: none;
+        cursor: pointer;
+    }
+    :nth-child(1){
+        cursor: not-allowed;
+        color: #303030;
+    }
+    :nth-child(2){
+        cursor: default;
+        color: #fff;
+    }
+    > * {
+        border: 1px solid #505050;
+        background-color: #656565;
+        width: 5vw;
+        height: 5vh;
+        &:hover{
+            background-color: #303030;
+        }
+    }
+    #current__page{
+        display: grid;
+        place-content: center;
+    }
+    #next__page__status{
+        display: none;
+    }
+    #previous__page__status{
+        display: none;
+    }
+}

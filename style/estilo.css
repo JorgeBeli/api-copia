@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Schoolbell&display=swap");
+body {
+  background-color: #202020;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Schoolbell", cursive;
+}
+
+h1, h2, h3, h4, h5, h6, p, input {
+  color: #fff;
+}
+
+nav h1 {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.character__wraper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+.character__wraper .personaje {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 0.5rem auto;
+  height: 35vh;
+  width: 40vw;
+  text-align: left;
+  user-select: none;
+}
+.character__wraper .personaje :hover {
+  cursor: pointer;
+}
+.character__wraper .personaje .personaje__img {
+  grid-area: 1/1/3/1;
+  background-color: #424642;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+  padding: 0.5rem;
+}
+.character__wraper .personaje .personaje__img img {
+  object-fit: cover;
+  width: 15vw;
+  height: 100%;
+  border-radius: 25px;
+}
+.character__wraper .personaje .personaje__info {
+  grid-area: 1/2/1/4;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 25px;
+  background-color: #424642;
+  font-size: 1.5;
+}
+.character__wraper .personaje .personaje__info > * {
+  margin-left: 1rem;
+}
+.character__wraper .personaje .personaje__info :nth-child(1) {
+  margin-top: 1rem;
+}
+.character__wraper .personaje .personaje__info :nth-child(2) {
+  margin-top: 0.25rem;
+}
+.character__wraper .personaje .personaje__info--abajo {
+  grid-area: 2/2/2/4;
+  border-bottom-right-radius: 25px;
+  background-color: #424642;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+  padding: 1rem 0;
+}
+.character__wraper .personaje .personaje__info--abajo > * {
+  margin-left: 1rem;
+}
+.character__wraper .personaje .personaje__info--abajo :nth-child(odd) {
+  color: #6d6d6d;
+  margin-top: 0.35rem;
+}
+
+.character__info {
+  display: none;
+}
+.character__info article {
+  margin: auto;
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: #505050;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem auto;
+}
+.buttons .nav__buttons {
+  user-select: none;
+  cursor: pointer;
+}
+.buttons :nth-child(1), .buttons :nth-child(2) {
+  cursor: not-allowed;
+  color: #303030;
+}
+.buttons :nth-child(3) {
+  cursor: default;
+  color: #fff;
+}
+.buttons > * {
+  border: 1px solid #505050;
+  background-color: #656565;
+  width: 5vw;
+  height: 5vh;
+}
+.buttons > *:hover {
+  background-color: #303030;
+}
+.buttons #current__page {
+  display: grid;
+  place-content: center;
+}/*# sourceMappingURL=estilo.css.map */
